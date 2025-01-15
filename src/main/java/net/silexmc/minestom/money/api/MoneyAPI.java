@@ -21,13 +21,13 @@ public interface MoneyAPI {
     void giveMoney(UUID uniqueID, BigDecimal amount);
 
     default void giveMoney(UUID uniqueID, double amount) {
-        this.setMoney(uniqueID, BigDecimal.valueOf(amount));
+        this.giveMoney(uniqueID, BigDecimal.valueOf(amount));
     }
 
     void takeMoney(UUID uniqueID, BigDecimal amount);
 
     default void takeMoney(UUID uniqueID, double amount) {
-        this.setMoney(uniqueID, BigDecimal.valueOf(amount));
+        this.takeMoney(uniqueID, BigDecimal.valueOf(amount));
     }
 
     boolean hasMoney(UUID uniqueID, BigDecimal amount);
